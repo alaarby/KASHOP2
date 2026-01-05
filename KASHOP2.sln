@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36401.2 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KASHOP2.API", "KASHOP2.API\KASHOP2.API.csproj", "{0194181C-71D0-41BC-8432-D163C1FC0742}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KASHOP2.DAL", "KASHOP2.DAL\KASHOP2.DAL.csproj", "{FA7226B7-693D-4907-9D47-7058F91027FF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KASHOP2.BLL", "KASHOP2.BLL\KASHOP2.BLL.csproj", "{1AC2C510-27CA-4A28-8F81-6C7FE72B0940}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0194181C-71D0-41BC-8432-D163C1FC0742}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0194181C-71D0-41BC-8432-D163C1FC0742}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0194181C-71D0-41BC-8432-D163C1FC0742}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0194181C-71D0-41BC-8432-D163C1FC0742}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA7226B7-693D-4907-9D47-7058F91027FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA7226B7-693D-4907-9D47-7058F91027FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA7226B7-693D-4907-9D47-7058F91027FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA7226B7-693D-4907-9D47-7058F91027FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1AC2C510-27CA-4A28-8F81-6C7FE72B0940}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1AC2C510-27CA-4A28-8F81-6C7FE72B0940}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1AC2C510-27CA-4A28-8F81-6C7FE72B0940}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1AC2C510-27CA-4A28-8F81-6C7FE72B0940}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B300A98C-3217-40DC-AAFF-F4B88A61A4AF}
+	EndGlobalSection
+EndGlobal

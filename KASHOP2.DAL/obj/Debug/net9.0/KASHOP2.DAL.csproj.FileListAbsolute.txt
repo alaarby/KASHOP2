@@ -1,0 +1,12 @@
+C:\Users\technipal\Desktop\C#projects\KASHOP2\KASHOP2.DAL\bin\Debug\net9.0\KASHOP2.DAL.deps.json
+C:\Users\technipal\Desktop\C#projects\KASHOP2\KASHOP2.DAL\bin\Debug\net9.0\KASHOP2.DAL.dll
+C:\Users\technipal\Desktop\C#projects\KASHOP2\KASHOP2.DAL\bin\Debug\net9.0\KASHOP2.DAL.pdb
+C:\Users\technipal\Desktop\C#projects\KASHOP2\KASHOP2.DAL\obj\Debug\net9.0\KASHOP2.DAL.csproj.AssemblyReference.cache
+C:\Users\technipal\Desktop\C#projects\KASHOP2\KASHOP2.DAL\obj\Debug\net9.0\KASHOP2.DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\technipal\Desktop\C#projects\KASHOP2\KASHOP2.DAL\obj\Debug\net9.0\KASHOP2.DAL.AssemblyInfoInputs.cache
+C:\Users\technipal\Desktop\C#projects\KASHOP2\KASHOP2.DAL\obj\Debug\net9.0\KASHOP2.DAL.AssemblyInfo.cs
+C:\Users\technipal\Desktop\C#projects\KASHOP2\KASHOP2.DAL\obj\Debug\net9.0\KASHOP2.DAL.csproj.CoreCompileInputs.cache
+C:\Users\technipal\Desktop\C#projects\KASHOP2\KASHOP2.DAL\obj\Debug\net9.0\KASHOP2.DAL.dll
+C:\Users\technipal\Desktop\C#projects\KASHOP2\KASHOP2.DAL\obj\Debug\net9.0\refint\KASHOP2.DAL.dll
+C:\Users\technipal\Desktop\C#projects\KASHOP2\KASHOP2.DAL\obj\Debug\net9.0\KASHOP2.DAL.pdb
+C:\Users\technipal\Desktop\C#projects\KASHOP2\KASHOP2.DAL\obj\Debug\net9.0\ref\KASHOP2.DAL.dll

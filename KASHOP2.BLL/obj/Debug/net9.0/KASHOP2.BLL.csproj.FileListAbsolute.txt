@@ -1,0 +1,15 @@
+C:\Users\technipal\Desktop\C#projects\KASHOP2\KASHOP2.BLL\bin\Debug\net9.0\KASHOP2.BLL.deps.json
+C:\Users\technipal\Desktop\C#projects\KASHOP2\KASHOP2.BLL\bin\Debug\net9.0\KASHOP2.BLL.dll
+C:\Users\technipal\Desktop\C#projects\KASHOP2\KASHOP2.BLL\bin\Debug\net9.0\KASHOP2.BLL.pdb
+C:\Users\technipal\Desktop\C#projects\KASHOP2\KASHOP2.BLL\bin\Debug\net9.0\KASHOP2.DAL.dll
+C:\Users\technipal\Desktop\C#projects\KASHOP2\KASHOP2.BLL\bin\Debug\net9.0\KASHOP2.DAL.pdb
+C:\Users\technipal\Desktop\C#projects\KASHOP2\KASHOP2.BLL\obj\Debug\net9.0\KASHOP2.BLL.csproj.AssemblyReference.cache
+C:\Users\technipal\Desktop\C#projects\KASHOP2\KASHOP2.BLL\obj\Debug\net9.0\KASHOP2.BLL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\technipal\Desktop\C#projects\KASHOP2\KASHOP2.BLL\obj\Debug\net9.0\KASHOP2.BLL.AssemblyInfoInputs.cache
+C:\Users\technipal\Desktop\C#projects\KASHOP2\KASHOP2.BLL\obj\Debug\net9.0\KASHOP2.BLL.AssemblyInfo.cs
+C:\Users\technipal\Desktop\C#projects\KASHOP2\KASHOP2.BLL\obj\Debug\net9.0\KASHOP2.BLL.csproj.CoreCompileInputs.cache
+C:\Users\technipal\Desktop\C#projects\KASHOP2\KASHOP2.BLL\obj\Debug\net9.0\KASHOP2..92A1DFB5.Up2Date
+C:\Users\technipal\Desktop\C#projects\KASHOP2\KASHOP2.BLL\obj\Debug\net9.0\KASHOP2.BLL.dll
+C:\Users\technipal\Desktop\C#projects\KASHOP2\KASHOP2.BLL\obj\Debug\net9.0\refint\KASHOP2.BLL.dll
+C:\Users\technipal\Desktop\C#projects\KASHOP2\KASHOP2.BLL\obj\Debug\net9.0\KASHOP2.BLL.pdb
+C:\Users\technipal\Desktop\C#projects\KASHOP2\KASHOP2.BLL\obj\Debug\net9.0\ref\KASHOP2.BLL.dll
