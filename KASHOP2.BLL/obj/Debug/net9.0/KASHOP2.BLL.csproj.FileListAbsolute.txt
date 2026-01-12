@@ -13,3 +13,4 @@ C:\Users\technipal\Desktop\C#projects\KASHOP2\KASHOP2.BLL\obj\Debug\net9.0\KASHO
 C:\Users\technipal\Desktop\C#projects\KASHOP2\KASHOP2.BLL\obj\Debug\net9.0\refint\KASHOP2.BLL.dll
 C:\Users\technipal\Desktop\C#projects\KASHOP2\KASHOP2.BLL\obj\Debug\net9.0\KASHOP2.BLL.pdb
 C:\Users\technipal\Desktop\C#projects\KASHOP2\KASHOP2.BLL\obj\Debug\net9.0\ref\KASHOP2.BLL.dll
+C:\Users\technipal\Desktop\C#projects\KASHOP2\KASHOP2.BLL\obj\Debug\net9.0\KASHOP2.BLL.sourcelink.json

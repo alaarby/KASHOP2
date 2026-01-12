@@ -18,10 +18,5 @@ namespace KASHOP2.API.Controllers
             _context = context;
             _localizer = localizer;
         }
-        [HttpGet("")]
-        public IActionResult GetAll()
-        {
-            var categories = _context.Categories.ToList();
-        }
     }
 }

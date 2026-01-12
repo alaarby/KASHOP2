@@ -10,3 +10,4 @@ C:\Users\technipal\Desktop\C#projects\KASHOP2\KASHOP2.DAL\obj\Debug\net9.0\KASHO
 C:\Users\technipal\Desktop\C#projects\KASHOP2\KASHOP2.DAL\obj\Debug\net9.0\refint\KASHOP2.DAL.dll
 C:\Users\technipal\Desktop\C#projects\KASHOP2\KASHOP2.DAL\obj\Debug\net9.0\KASHOP2.DAL.pdb
 C:\Users\technipal\Desktop\C#projects\KASHOP2\KASHOP2.DAL\obj\Debug\net9.0\ref\KASHOP2.DAL.dll
+C:\Users\technipal\Desktop\C#projects\KASHOP2\KASHOP2.DAL\obj\Debug\net9.0\KASHOP2.DAL.sourcelink.json
