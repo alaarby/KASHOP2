@@ -1,4 +1,5 @@
 
+using KASHOP2.BLL;
 using KASHOP2.BLL.Services.Classes;
 using KASHOP2.BLL.Services.Interfaces;
 using KASHOP2.DAL.Data;
@@ -88,13 +89,7 @@ namespace KASHOP2.API
                }
                 );
 
-            builder.Services.AddScoped<ICategoryService, CategoryService>();
-            builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
-            builder.Services.AddScoped<IAuthenticationService, AuthenticationService>();
-
-            builder.Services.AddScoped<ISeedData, RoleSeedData>();
-            builder.Services.AddScoped<ISeedData, UserSeedData>();
-            builder.Services.AddTransient<IEmailSender, EmailSender>();
+            AppConfiguration.Config(builder.Services);
 
             var app = builder.Build();
 
