@@ -10,6 +10,9 @@ namespace KASHOP2.DAL.Entities
     {
         public int Id { get; set; }
         public Status Status { get; set; } = Status.Active;
-        public DateTime CreatedAt { get; set; } = DateTime.Now;
+        public string CreatedBy { get; set; }
+        public DateTime CreatedAt { get; set; }
+        public string? UpdatedBy { get; set; }
+        public DateTime? UpdatedAt { get; set; }
     }
 }
