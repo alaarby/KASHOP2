@@ -12,5 +12,7 @@ namespace KASHOP2.DAL.Entities
         public string FullName { get; set; }
         public string? Street { get; set; }
         public string? City { get; set; }
+        public string? CodeResetPasssword { get; set; }
+        public DateTime? PasswordResetCodeExpiery { get; set; }
     }
 }
