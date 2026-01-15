@@ -9,7 +9,10 @@ namespace KASHOP2.DAL.Repository.Interfaces
 {
     public interface ICategoryRepository
     {
-        public List<Category> GetAll();
-        public Category Create(Category request);
+        Task<List<Category>> GetAll();
+        Task<Category> CreateAsync(Category request);
+        Task<Category?> FindByIdAsync(int id);
+        Task DeleteAsync(Category category);
+        Task<Category?> UpdateAsync(Category category);
     }
 }
