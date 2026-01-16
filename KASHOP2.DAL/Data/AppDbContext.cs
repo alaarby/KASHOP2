@@ -47,19 +47,22 @@ namespace KASHOP2.DAL.Data
         public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
         {
             var entries = ChangeTracker.Entries<BaseModel>();
-            var currentUserId = _httpContext.HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
-
-            foreach (var entry in entries)
+            if (_httpContext.HttpContext != null)
             {
-                if (entry.State == EntityState.Added)
+                var currentUserId = _httpContext.HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+                foreach (var entry in entries)
                 {
-                    entry.Property(e => e.CreatedBy).CurrentValue = currentUserId;
-                    entry.Property(e => e.CreatedAt).CurrentValue = DateTime.UtcNow;
-                }
-                else if (entry.State == EntityState.Modified)
-                {
-                    entry.Property(e => e.UpdatedBy).CurrentValue = currentUserId;
-                    entry.Property(e => e.UpdatedAt).CurrentValue = DateTime.UtcNow;
+                    if (entry.State == EntityState.Added)
+                    {
+                        entry.Property(e => e.CreatedBy).CurrentValue = currentUserId;
+                        entry.Property(e => e.CreatedAt).CurrentValue = DateTime.UtcNow;
+                    }
+                    else if (entry.State == EntityState.Modified)
+                    {
+                        entry.Property(e => e.UpdatedBy).CurrentValue = currentUserId;
+                        entry.Property(e => e.UpdatedAt).CurrentValue = DateTime.UtcNow;
+                    }
                 }
             }
             return base.SaveChangesAsync(cancellationToken);

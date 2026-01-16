@@ -100,7 +100,7 @@ namespace KASHOP2.API
             {
                 app.MapOpenApi();
             }
-
+            app.UseStaticFiles();
             app.UseHttpsRedirection();
             app.UseAuthentication();
             app.UseAuthorization();

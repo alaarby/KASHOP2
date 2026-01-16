@@ -12,9 +12,12 @@ namespace KASHOP2.BLL
     {
         public static void Config(IServiceCollection Services)
         {
+            Services.AddScoped<IAuthenticationService, AuthenticationService>();
             Services.AddScoped<ICategoryService, CategoryService>();
             Services.AddScoped<ICategoryRepository, CategoryRepository>();
-            Services.AddScoped<IAuthenticationService, AuthenticationService>();
+            Services.AddScoped<IProductRepository, ProductRepository>();
+            Services.AddScoped<IProductService, ProductService>();
+            Services.AddScoped<IFileService, FileService>();
 
             Services.AddScoped<ISeedData, RoleSeedData>();
             Services.AddScoped<ISeedData, UserSeedData>();
