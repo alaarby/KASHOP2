@@ -1,5 +1,6 @@
 
 using KASHOP2.BLL;
+using KASHOP2.BLL.MapsterConfig;
 using KASHOP2.BLL.Services.Classes;
 using KASHOP2.BLL.Services.Interfaces;
 using KASHOP2.DAL.Data;
@@ -90,7 +91,7 @@ namespace KASHOP2.API
                 );
 
             AppConfiguration.Config(builder.Services);
-
+            MapsterConfig.MapsterConfigRegister();
             var app = builder.Build();
 
             app.UseRequestLocalization(app.Services.GetRequiredService<IOptions<RequestLocalizationOptions>>().Value);

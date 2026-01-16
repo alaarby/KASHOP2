@@ -26,7 +26,7 @@ namespace KASHOP2.DAL.Repository.Classes
         } 
         public async Task<List<Category>> GetAll()
         {
-            return await _context.Categories.Include(c => c.Translations).ToListAsync();
+            return await _context.Categories.Include(c => c.Translations).Include(c => c.User).ToListAsync();
 
         }
         public async Task<Category?> FindByIdAsync(int id)

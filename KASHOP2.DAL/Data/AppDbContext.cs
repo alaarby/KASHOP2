@@ -18,13 +18,14 @@ namespace KASHOP2.DAL.Data
 
         public DbSet<Category> Categories { get; set; }
         public DbSet<CategoryTranslation> CategoryTranslations { get; set; }
+        public DbSet<Product> Products { get; set; }
+        public DbSet<ProductTranslation> ProductTranslations { get; set; }
         public AppDbContext(DbContextOptions<AppDbContext> options,
             IHttpContextAccessor httpContext)
         : base(options)
         {
             _httpContext = httpContext;
         }
-
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
@@ -36,6 +37,32 @@ namespace KASHOP2.DAL.Data
             builder.Entity<IdentityRoleClaim<string>>().ToTable("RoleClaims");
             builder.Entity<IdentityUserLogin<string>>().ToTable("UserLogins");
             builder.Entity<IdentityUserToken<string>>().ToTable("UserTokens");
+
+            builder.Entity<Category>()
+                .HasOne(c => c.User)
+                .WithMany()
+                .HasForeignKey(c => c.CreatedBy)
+                .OnDelete(DeleteBehavior.NoAction);
+        }
+        public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
+        {
+            var entries = ChangeTracker.Entries<BaseModel>();
+            var currentUserId = _httpContext.HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            foreach (var entry in entries)
+            {
+                if (entry.State == EntityState.Added)
+                {
+                    entry.Property(e => e.CreatedBy).CurrentValue = currentUserId;
+                    entry.Property(e => e.CreatedAt).CurrentValue = DateTime.UtcNow;
+                }
+                else if (entry.State == EntityState.Modified)
+                {
+                    entry.Property(e => e.UpdatedBy).CurrentValue = currentUserId;
+                    entry.Property(e => e.UpdatedAt).CurrentValue = DateTime.UtcNow;
+                }
+            }
+            return base.SaveChangesAsync(cancellationToken);
         }
         public override int SaveChanges()
         {

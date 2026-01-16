@@ -8,6 +8,7 @@ namespace KASHOP2.DAL.Entities
 {
     public class Category : BaseModel
     {
+        public List<Product> Products { get; set; }
         public ICollection<CategoryTranslation> Translations { get; set; } = new List<CategoryTranslation>();
     }
 }

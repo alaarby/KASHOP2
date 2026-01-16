@@ -24,6 +24,13 @@ namespace KASHOP2.API.Areas.Admin
             _categoryService = categoryService;
             _localizer = localizer;
         }
+        [HttpGet]
+        public async Task<IActionResult> Index()
+        {
+            var response = await _categoryService.GetAll();
+
+            return Ok(new { message = _localizer["Success"].Value, response });
+        }
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] CategoryRequest request)
         {

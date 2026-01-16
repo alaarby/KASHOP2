@@ -22,9 +22,9 @@ namespace KASHOP2.API.Areas.User
             _localizer = localizer;
         }
         [HttpGet]
-        public  async Task<IActionResult> Index()
+        public  async Task<IActionResult> Index([FromQuery] string lang = "en")
         {
-            var response = await _categoryService.GetAll();
+            var response = await _categoryService.GetAllForUser(lang);
 
             return Ok(new { message= _localizer["Success"].Value, response}); 
         }

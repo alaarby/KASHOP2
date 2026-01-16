@@ -34,6 +34,14 @@ namespace KASHOP2.BLL.Services.Classes
             var response = categories.Adapt<List<CategoryResponse>>();  
             return response;
         }
+        public async Task<List<CategoryUserResponse>> GetAllForUser(string lang = "en")
+        {
+            var categories = await _categoryRepository.GetAll();
+            var response = categories.BuildAdapter()
+                .AddParameters("lang", lang)
+                .AdaptToType<List<CategoryUserResponse>>();
+            return response;
+        }
         public async Task<BaseResponse> DeleteCategoryAsync(int id)
         {
             try
