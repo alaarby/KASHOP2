@@ -38,6 +38,18 @@ namespace KASHOP2.BLL.Services.Classes
                 product.MainImage = imagePath;
             }
 
+            if(request.SubImages != null)
+            {
+                product.SubImages = new List<ProductImage>();
+                foreach(var image in request.SubImages)
+                {
+                    var imagePath = await _fileService.UploadAsync(image);
+                    product.SubImages.Add(new ProductImage
+                    {
+                        ImageName = image.Name
+                    });
+                }
+            }
             await _productRepository.AddAsync(product);
 
             return new BaseResponse()

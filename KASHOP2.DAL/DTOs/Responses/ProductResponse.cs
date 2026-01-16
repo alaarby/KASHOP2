@@ -16,5 +16,6 @@ namespace KASHOP2.DAL.DTOs.Responses
         public string CreatedBy { get; set; }
         public string MainImage { get; set; }
         public List<CategoryTranslationResponse> Ttranslations { get; set; }
+        public List<string> SubImages { get; set; }
     }
 }

@@ -179,3 +179,4 @@ C:\Users\technipal\Desktop\C#projects\KASHOP2\KASHOP2.API\bin\Debug\net9.0\Micro
 C:\Users\technipal\Desktop\C#projects\KASHOP2\KASHOP2.API\bin\Debug\net9.0\Microsoft.Extensions.Identity.Core.dll
 C:\Users\technipal\Desktop\C#projects\KASHOP2\KASHOP2.API\bin\Debug\net9.0\Microsoft.Extensions.Identity.Stores.dll
 C:\Users\technipal\Desktop\C#projects\KASHOP2\KASHOP2.API\bin\Debug\net9.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\technipal\Desktop\C#projects\KASHOP2\KASHOP2.API\bin\Debug\net9.0\KASHOP2.API.staticwebassets.runtime.json
