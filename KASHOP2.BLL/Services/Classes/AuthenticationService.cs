@@ -25,16 +25,19 @@ namespace KASHOP2.BLL.Services.Classes
         private readonly IConfiguration _configuration;
         private readonly IEmailSender _emailSender;
         private readonly SignInManager<ApplicationUser> _signInManager;
+        private readonly ITokenService _tokenService;
 
         public AuthenticationService(UserManager<ApplicationUser> userManager,
             IConfiguration configuration,
             IEmailSender emailSender,
-            SignInManager<ApplicationUser> signInManager)
+            SignInManager<ApplicationUser> signInManager,
+            ITokenService tokenService)
         {
             _userManager = userManager;
             _configuration = configuration;
             _emailSender = emailSender;
             _signInManager = signInManager;
+            _tokenService = tokenService;
         }
         public async Task<LoginResponse> LoginAsync(LoginRequest request)
         {
@@ -83,12 +86,18 @@ namespace KASHOP2.BLL.Services.Classes
                         Message = "Invalid Password"
                     };
                 }
+                var accessToken = await _tokenService.GenerateAccessToken(user);
+                var refreshToken = _tokenService.GenerateRefreshToken();
 
+                user.RefreshToken = accessToken;
+                user.RefreshTokenExpiryTime = DateTime.UtcNow.AddDays(7);
+                await _userManager.UpdateAsync(user);
                 return new LoginResponse()
                 {
                     Success = true,
                     Message = "Login succesfully",
-                    AccessToken = await GenerateAccessToken(user)
+                    AccessToken = accessToken,
+                    RefreshToken = refreshToken
                 };
             }
             catch (Exception ex)
@@ -101,7 +110,6 @@ namespace KASHOP2.BLL.Services.Classes
                 };
             }
         }
-
         public async Task<RegisterResponse> RegisterAsync(RegisterRequest request, HttpRequest httpRequest)
         {
             try
@@ -157,28 +165,6 @@ namespace KASHOP2.BLL.Services.Classes
                 return false; ;
             }
             return true;
-        }
-        private async Task<string> GenerateAccessToken(ApplicationUser user)
-        {
-            var roles = await _userManager.GetRolesAsync(user);
-            var userClaims = new List<Claim>()
-            {
-                new Claim(ClaimTypes.NameIdentifier, user.Id),
-                new Claim(ClaimTypes.Name, user.UserName),
-                new Claim(ClaimTypes.Email, user.Email),
-                new Claim(ClaimTypes.Role, string.Join(',', roles))
-            };
-
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["jwtOptions:SecretKey"]));
-            var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
-
-            var token = new JwtSecurityToken(
-                    claims: userClaims,
-                    expires: DateTime.UtcNow.AddDays(15),
-                    signingCredentials: creds
-                );
-
-            return new JwtSecurityTokenHandler().WriteToken(token);
         }
         public async Task<ForgotPasswordResponse> RequestPasswordReset(ForgotPasswordReauest request)
         {
@@ -251,6 +237,38 @@ namespace KASHOP2.BLL.Services.Classes
             {
                 Success = true,
                 Message = "Password reset succesfully"
+            };
+        }
+        public async Task<LoginResponse> RefreshTokenAsync(TokenApiModel request)
+        {
+            string accessToken = request.AccessToken;
+            string refreshToken = request.RefreshToken;
+
+            var principal = _tokenService.GetUserPrincipalFromExpiredToken(accessToken);
+            
+            var userName = principal.Identity.Name;
+
+            var user = await _userManager.FindByNameAsync(userName);
+            if (user == null || user.RefreshToken != refreshToken || user.RefreshTokenExpiryTime <= DateTime.UtcNow)
+            {
+                return new LoginResponse()
+                {
+                    Success = false,
+                    Message = "Invalid client request"
+                };
+            }
+
+            var newAccessToken = await _tokenService.GenerateAccessToken(user);
+            var newRefreshToken = _tokenService.GenerateRefreshToken();
+            user.RefreshToken = newRefreshToken;
+
+            await _userManager.UpdateAsync(user);
+
+            return new LoginResponse
+            {
+                Success = true,
+                AccessToken = accessToken,
+                RefreshToken = newRefreshToken
             };
         }
     }

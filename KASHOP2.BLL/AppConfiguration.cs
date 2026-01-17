@@ -18,6 +18,7 @@ namespace KASHOP2.BLL
             Services.AddScoped<IProductRepository, ProductRepository>();
             Services.AddScoped<IProductService, ProductService>();
             Services.AddScoped<IFileService, FileService>();
+            Services.AddScoped<ITokenService, TokenService>();
 
             Services.AddScoped<ISeedData, RoleSeedData>();
             Services.AddScoped<ISeedData, UserSeedData>();

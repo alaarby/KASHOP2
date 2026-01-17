@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace KASHOP2.DAL.DTOs.Responses
+namespace KASHOP2.DAL.DTOs.Requests
 {
-    public class LoginResponse : BaseResponse
+    public class TokenApiModel
     {
         public string? AccessToken { get; set; }
         public string? RefreshToken { get; set; }

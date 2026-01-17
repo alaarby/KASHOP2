@@ -14,5 +14,8 @@ namespace KASHOP2.DAL.Entities
         public string? City { get; set; }
         public string? CodeResetPasssword { get; set; }
         public DateTime? PasswordResetCodeExpiery { get; set; }
+        public string? RefreshToken { get; set; }
+        public DateTime? RefreshTokenExpiryTime { get; set; }
+
     }
 }

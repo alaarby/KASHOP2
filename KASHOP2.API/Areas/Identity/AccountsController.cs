@@ -51,5 +51,12 @@ namespace KASHOP2.API.Areas.Identity
             if (!result.Success) return BadRequest(result);
             return Ok(result);
         }
+        [HttpPatch("refresh-token")]
+        public async Task<IActionResult> RefreshToken(TokenApiModel request)
+        {
+            var result = await _authenticationService.RefreshTokenAsync(request);
+            if (!result.Success) return BadRequest(result);
+            return Ok(result);
+        }
     }
 }
