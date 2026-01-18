@@ -58,5 +58,21 @@ namespace KASHOP2.BLL.Services.Classes
                 Message = "Product added succesfully"
             };
         }
+        public async Task<List<ProductUserResponse>> GetAllForUser(string lang = "en")
+        {
+            var products = await _productRepository.GetAll();
+            var response = products.BuildAdapter()
+                .AddParameters("lang", lang)
+                .AdaptToType<List<ProductUserResponse>>();
+            return response;
+        }
+        public async Task<List<ProductUserResponse>> GetProductDetailsForUser(int id, string lang = "en")
+        {
+            var product = await _productRepository.FindByIdAsync(id);
+            var response = product.BuildAdapter()
+                .AddParameters("lang", lang)
+                .AdaptToType<ProductUserDetails>();
+            return response;
+        }
     }
 }

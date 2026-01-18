@@ -24,6 +24,11 @@ namespace KASHOP2.DAL.Repository.Classes
             await _context.SaveChangesAsync();
             return product;
         }
+        public async Task<Product?> FindByIdAsync(int id)
+        {
+            return await _context.Products.Include(c => c.Translations)
+                .FirstOrDefaultAsync(c => c.Id == id);
+        }
         public async Task<List<Product>> GetAll()
         {
             return await _context.Products.Include(c => c.Translations)

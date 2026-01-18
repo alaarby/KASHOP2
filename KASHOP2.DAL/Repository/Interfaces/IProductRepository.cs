@@ -10,6 +10,7 @@ namespace KASHOP2.DAL.Repository.Interfaces
     public interface IProductRepository
     {
         Task<List<Product>> GetAll();
-        Task<Product> AddAsync(Product product);    
+        Task<Product> AddAsync(Product product);
+        Task<Product?> FindByIdAsync(int id);
     }
 }
