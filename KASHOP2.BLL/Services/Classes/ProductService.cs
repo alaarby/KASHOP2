@@ -66,7 +66,7 @@ namespace KASHOP2.BLL.Services.Classes
                 .AdaptToType<List<ProductUserResponse>>();
             return response;
         }
-        public async Task<List<ProductUserResponse>> GetProductDetailsForUser(int id, string lang = "en")
+        public async Task<ProductUserDetails> GetProductDetailsForUser(int id, string lang = "en")
         {
             var product = await _productRepository.FindByIdAsync(id);
             var response = product.BuildAdapter()

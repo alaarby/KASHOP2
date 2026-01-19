@@ -21,6 +21,7 @@ namespace KASHOP2.DAL.Data
         public DbSet<Product> Products { get; set; }
         public DbSet<ProductTranslation> ProductTranslations { get; set; }
         public DbSet<ProductImage> ProductImages { get; set; }
+        public DbSet<Cart> Carts { get; set; }
         public AppDbContext(DbContextOptions<AppDbContext> options,
             IHttpContextAccessor httpContext)
         : base(options)
@@ -43,6 +44,12 @@ namespace KASHOP2.DAL.Data
                 .HasOne(c => c.User)
                 .WithMany()
                 .HasForeignKey(c => c.CreatedBy)
+                .OnDelete(DeleteBehavior.NoAction);
+
+            builder.Entity<Cart>()
+                .HasOne(c => c.User)
+                .WithMany()
+                .HasForeignKey(c => c.UserId)
                 .OnDelete(DeleteBehavior.NoAction);
         }
         public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
