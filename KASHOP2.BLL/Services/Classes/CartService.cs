@@ -52,5 +52,23 @@ namespace KASHOP2.BLL.Services.Classes
                 Message = "Product added succesfully"
             };
         }
+
+        public async Task<CartSummaryResponse> GetUserCartAsync(string userId, string lang = "en")
+        {
+            var cartItems = await _cartRepository.GetUserCartAsync(userId);
+
+            var items = cartItems.Select(c => new CartResponse
+            {
+                ProductId = c.ProductId,
+                ProductName = c.Product.Translations.FirstOrDefault(t => t.Language == lang).Name,
+                Count = c.Count,
+                Price = c.Product.Price
+            }).ToList();
+
+            return new CartSummaryResponse
+            {
+                Items = items
+            }; 
+        }
     }
 }

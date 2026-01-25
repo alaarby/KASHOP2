@@ -9,6 +9,7 @@ namespace KASHOP2.DAL.Repository.Interfaces
 {
     public interface ICartRepository
     {
-        Task<Cart?> AddAsync(Cart cart);    
+        Task<Cart?> AddAsync(Cart cart);
+        Task<List<Cart>> GetUserCartAsync(string userId);
     }
 }

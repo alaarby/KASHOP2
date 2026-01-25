@@ -24,5 +24,13 @@ namespace KASHOP2.DAL.Repository.Classes
             await _context.SaveChangesAsync();
             return cart;
         }
+
+        public async Task<List<Cart>> GetUserCartAsync(string userId)
+        {
+            return await _context.Carts
+                .Where(c => c.UserId == userId)
+                .Include(c => c.Product).ThenInclude(p => p.Translations)
+                .ToListAsync();
+        } 
     }
 }

@@ -31,5 +31,12 @@ namespace KASHOP2.API.Areas.User
 
             return Ok(new { message = _localizer["Success"].Value, response });
         }
+        [HttpGet]
+        public async Task<IActionResult> Index()
+        {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var result = await _cartService.GetUserCartAsync(userId);
+            return Ok(result);
+        }
     }
 }
