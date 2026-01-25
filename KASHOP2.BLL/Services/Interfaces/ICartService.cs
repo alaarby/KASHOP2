@@ -12,5 +12,6 @@ namespace KASHOP2.BLL.Services.Interfaces
     {
         Task<BaseResponse> AddToCartAsync(string userId, AddToCartRequest request);
         Task<CartSummaryResponse> GetUserCartAsync(string userId, string lang = "en");
+        Task<BaseResponse> ClearCartAsync(string userId);
     }
 }

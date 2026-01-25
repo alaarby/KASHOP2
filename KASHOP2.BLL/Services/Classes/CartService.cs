@@ -41,11 +41,20 @@ namespace KASHOP2.BLL.Services.Classes
                     Message = "not enough stock"
                 };
             }
-            var cart = request.Adapt<Cart>();
-            cart.UserId = userId;
 
-            await _cartRepository.AddAsync(cart);
+            var cartItem = await _cartRepository.GetCartItemAsync(userId, request.ProductId);
+            if(cartItem != null)
+            {
+                cartItem.Count += request.Count;
+                await _cartRepository.UpdateAsync(cartItem);
+            }
+            else
+            {
+                var cart = request.Adapt<Cart>();
+                cart.UserId = userId;
 
+                await _cartRepository.AddAsync(cart); 
+            }
             return new BaseResponse
             {
                 Success = true,
@@ -69,6 +78,16 @@ namespace KASHOP2.BLL.Services.Classes
             {
                 Items = items
             }; 
+        }
+        public async Task<BaseResponse> ClearCartAsync(string userId)
+        {
+            await _cartRepository.ClearCartAsync(userId);
+
+            return new BaseResponse
+            {
+                Success = true,
+                Message = "cart cleared succesfully"
+            };
         }
     }
 }
