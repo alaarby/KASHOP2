@@ -22,6 +22,8 @@ namespace KASHOP2.DAL.Data
         public DbSet<ProductTranslation> ProductTranslations { get; set; }
         public DbSet<ProductImage> ProductImages { get; set; }
         public DbSet<Cart> Carts { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderItem> OrderItems { get; set; }
         public AppDbContext(DbContextOptions<AppDbContext> options,
             IHttpContextAccessor httpContext)
         : base(options)
@@ -47,6 +49,12 @@ namespace KASHOP2.DAL.Data
                 .OnDelete(DeleteBehavior.NoAction);
 
             builder.Entity<Cart>()
+                .HasOne(c => c.User)
+                .WithMany()
+                .HasForeignKey(c => c.UserId)
+                .OnDelete(DeleteBehavior.NoAction);
+
+            builder.Entity<Order>()
                 .HasOne(c => c.User)
                 .WithMany()
                 .HasForeignKey(c => c.UserId)

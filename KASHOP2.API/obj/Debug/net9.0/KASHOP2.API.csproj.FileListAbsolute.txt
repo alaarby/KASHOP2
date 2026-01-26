@@ -45,7 +45,6 @@ C:\Users\technipal\Desktop\C#projects\KASHOP2\KASHOP2.API\bin\Debug\net9.0\Micro
 C:\Users\technipal\Desktop\C#projects\KASHOP2\KASHOP2.API\bin\Debug\net9.0\Microsoft.IdentityModel.Tokens.dll
 C:\Users\technipal\Desktop\C#projects\KASHOP2\KASHOP2.API\bin\Debug\net9.0\Microsoft.OpenApi.dll
 C:\Users\technipal\Desktop\C#projects\KASHOP2\KASHOP2.API\bin\Debug\net9.0\Microsoft.SqlServer.Server.dll
-C:\Users\technipal\Desktop\C#projects\KASHOP2\KASHOP2.API\bin\Debug\net9.0\Microsoft.Win32.SystemEvents.dll
 C:\Users\technipal\Desktop\C#projects\KASHOP2\KASHOP2.API\bin\Debug\net9.0\Mono.TextTemplating.dll
 C:\Users\technipal\Desktop\C#projects\KASHOP2\KASHOP2.API\bin\Debug\net9.0\System.ClientModel.dll
 C:\Users\technipal\Desktop\C#projects\KASHOP2\KASHOP2.API\bin\Debug\net9.0\System.CodeDom.dll
@@ -55,13 +54,10 @@ C:\Users\technipal\Desktop\C#projects\KASHOP2\KASHOP2.API\bin\Debug\net9.0\Syste
 C:\Users\technipal\Desktop\C#projects\KASHOP2\KASHOP2.API\bin\Debug\net9.0\System.Composition.Runtime.dll
 C:\Users\technipal\Desktop\C#projects\KASHOP2\KASHOP2.API\bin\Debug\net9.0\System.Composition.TypedParts.dll
 C:\Users\technipal\Desktop\C#projects\KASHOP2\KASHOP2.API\bin\Debug\net9.0\System.Configuration.ConfigurationManager.dll
-C:\Users\technipal\Desktop\C#projects\KASHOP2\KASHOP2.API\bin\Debug\net9.0\System.Drawing.Common.dll
 C:\Users\technipal\Desktop\C#projects\KASHOP2\KASHOP2.API\bin\Debug\net9.0\System.IdentityModel.Tokens.Jwt.dll
 C:\Users\technipal\Desktop\C#projects\KASHOP2\KASHOP2.API\bin\Debug\net9.0\System.Memory.Data.dll
 C:\Users\technipal\Desktop\C#projects\KASHOP2\KASHOP2.API\bin\Debug\net9.0\System.Runtime.Caching.dll
 C:\Users\technipal\Desktop\C#projects\KASHOP2\KASHOP2.API\bin\Debug\net9.0\System.Security.Cryptography.ProtectedData.dll
-C:\Users\technipal\Desktop\C#projects\KASHOP2\KASHOP2.API\bin\Debug\net9.0\System.Security.Permissions.dll
-C:\Users\technipal\Desktop\C#projects\KASHOP2\KASHOP2.API\bin\Debug\net9.0\System.Windows.Extensions.dll
 C:\Users\technipal\Desktop\C#projects\KASHOP2\KASHOP2.API\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.resources.dll
 C:\Users\technipal\Desktop\C#projects\KASHOP2\KASHOP2.API\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.resources.dll
 C:\Users\technipal\Desktop\C#projects\KASHOP2\KASHOP2.API\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.resources.dll
@@ -133,12 +129,7 @@ C:\Users\technipal\Desktop\C#projects\KASHOP2\KASHOP2.API\bin\Debug\net9.0\runti
 C:\Users\technipal\Desktop\C#projects\KASHOP2\KASHOP2.API\bin\Debug\net9.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
 C:\Users\technipal\Desktop\C#projects\KASHOP2\KASHOP2.API\bin\Debug\net9.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
 C:\Users\technipal\Desktop\C#projects\KASHOP2\KASHOP2.API\bin\Debug\net9.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
-C:\Users\technipal\Desktop\C#projects\KASHOP2\KASHOP2.API\bin\Debug\net9.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
-C:\Users\technipal\Desktop\C#projects\KASHOP2\KASHOP2.API\bin\Debug\net9.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
-C:\Users\technipal\Desktop\C#projects\KASHOP2\KASHOP2.API\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
 C:\Users\technipal\Desktop\C#projects\KASHOP2\KASHOP2.API\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
-C:\Users\technipal\Desktop\C#projects\KASHOP2\KASHOP2.API\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
-C:\Users\technipal\Desktop\C#projects\KASHOP2\KASHOP2.API\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 C:\Users\technipal\Desktop\C#projects\KASHOP2\KASHOP2.API\bin\Debug\net9.0\KASHOP2.BLL.dll
 C:\Users\technipal\Desktop\C#projects\KASHOP2\KASHOP2.API\bin\Debug\net9.0\KASHOP2.DAL.dll
 C:\Users\technipal\Desktop\C#projects\KASHOP2\KASHOP2.API\bin\Debug\net9.0\KASHOP2.BLL.pdb
@@ -180,3 +171,5 @@ C:\Users\technipal\Desktop\C#projects\KASHOP2\KASHOP2.API\bin\Debug\net9.0\Micro
 C:\Users\technipal\Desktop\C#projects\KASHOP2\KASHOP2.API\bin\Debug\net9.0\Microsoft.Extensions.Identity.Stores.dll
 C:\Users\technipal\Desktop\C#projects\KASHOP2\KASHOP2.API\bin\Debug\net9.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\technipal\Desktop\C#projects\KASHOP2\KASHOP2.API\bin\Debug\net9.0\KASHOP2.API.staticwebassets.runtime.json
+C:\Users\technipal\Desktop\C#projects\KASHOP2\KASHOP2.API\bin\Debug\net9.0\Newtonsoft.Json.dll
+C:\Users\technipal\Desktop\C#projects\KASHOP2\KASHOP2.API\bin\Debug\net9.0\Stripe.net.dll
