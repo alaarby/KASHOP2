@@ -45,7 +45,14 @@ namespace KASHOP2.DAL.Repository.Classes
                 .Include(o => o.User)
                 .ToListAsync();
         }
-
+        public async Task<bool> HasUserDeliveredOrderForProductAsync(string userId, int productId)
+        {
+            return await _context.Orders
+                .AnyAsync(o =>
+                    o.UserId == userId &&
+                    o.OrderStatus == OrderStatusEnum.Delivered &&
+                    o.Items.Any(i => i.ProductId == productId));
+        }
         public async Task<Order?> UpdateAsync(Order order)
         {
             _context.Orders.Update(order);

@@ -14,5 +14,6 @@ namespace KASHOP2.DAL.Repository.Interfaces
         Task<Order?> UpdateAsync(Order order);
         Task<List<Order>> GetOrdersByStatusAsync(OrderStatusEnum status);
         Task<Order?> GetOrdersByIdAsync(int id);
+        Task<bool> HasUserDeliveredOrderForProductAsync(string userId, int productId);
     }
 }

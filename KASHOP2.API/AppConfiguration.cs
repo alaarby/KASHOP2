@@ -25,6 +25,8 @@ namespace KASHOP2.BLL
             Services.AddScoped<IOrderService, OrderService>();
             Services.AddScoped<IOrderItemRepository, OrderItemRepository>();
             Services.AddScoped<IManageUserService, ManageUserService>();
+            Services.AddScoped<IReviewService, ReviewService>();
+            Services.AddScoped<IReviewRepository, ReviewRepository>();
 
             Services.AddScoped<IFileService, FileService>();
             Services.AddScoped<ITokenService, TokenService>();

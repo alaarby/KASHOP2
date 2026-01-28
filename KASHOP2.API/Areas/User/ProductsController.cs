@@ -1,8 +1,10 @@
 ﻿using KASHOP2.API.Resources;
 using KASHOP2.BLL.Services.Interfaces;
+using KASHOP2.DAL.DTOs.Requests;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Localization;
+using System.Security.Claims;
 
 namespace KASHOP2.API.Areas.User
 {
@@ -12,11 +14,15 @@ namespace KASHOP2.API.Areas.User
     {
         private readonly IProductService _productService;
         private readonly IStringLocalizer<SharedResource> _localizer;
+        private readonly IReviewService _reviewService;
 
-        public ProductsController(IProductService productService, IStringLocalizer<SharedResource> localizer)
+        public ProductsController(IProductService productService, 
+            IStringLocalizer<SharedResource> localizer,
+            IReviewService reviewService)
         {
             _productService = productService;
             _localizer = localizer;
+            _reviewService = reviewService;
         }
         [HttpGet]
         public async Task<IActionResult> Index([FromQuery] string lang = "en", [FromQuery] int page = 1,
@@ -33,6 +39,14 @@ namespace KASHOP2.API.Areas.User
             var response = await _productService.GetProductDetailsForUser(id, lang);
 
             return Ok(new { message = _localizer["Success"].Value, response });
+        }
+        [HttpPost("{productId}/reviews")]
+        public async Task<IActionResult> AddReview([FromRoute] int productId, [FromBody] CreateReviewRequest request)
+        {
+            var user = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var response = await _reviewService.AddReviewAsync(user, productId, request);
+            if(!response.Success) return BadRequest(response);
+            return Ok(response);
         }
     }
 }
