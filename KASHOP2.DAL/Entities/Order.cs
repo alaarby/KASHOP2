@@ -19,6 +19,11 @@ namespace KASHOP2.DAL.Entities
         Cash = 1,
         Visa
     }
+    public enum PaymentStatusEnum
+    {
+        UnPaid = 1,
+        Paid
+    }
     public class Order
     {
         public int Id { get; set; }
@@ -29,6 +34,7 @@ namespace KASHOP2.DAL.Entities
         public decimal AmountPaid { get; set; }
         public string? SessionId { get; set; }
         public string? PaymnetId { get; set; }
+        public PaymentStatusEnum PaymentStatus { get; set; }
         public ApplicationUser User { get; set; }
         public string UserId { get; set; }
         public List<OrderItem> Items { get; set; } = new List<OrderItem>();

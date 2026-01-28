@@ -5,6 +5,7 @@ using KASHOP2.DAL.Entities;
 using KASHOP2.DAL.Repository.Classes;
 using KASHOP2.DAL.Repository.Interfaces;
 using Mapster;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,8 +26,8 @@ namespace KASHOP2.BLL.Services.Classes
         }
         public async Task<List<ProductResponse>> GetAll()
         {
-            var categories = await _productRepository.GetAll();
-            var response = categories.Adapt<List<ProductResponse>>();
+            var products = _productRepository.GetAll();
+            var response = products.Adapt<List<ProductResponse>>();
             return response;
         }
         public async Task<BaseResponse> CreateProduct(ProductRequest request)
@@ -58,10 +59,37 @@ namespace KASHOP2.BLL.Services.Classes
                 Message = "Product added succesfully"
             };
         }
-        public async Task<List<ProductUserResponse>> GetAllForUser(string lang = "en")
+        public async Task<List<ProductUserResponse>> GetAllForUser(string lang = "en", 
+            int page = 1, 
+            int limit = 3,
+            string? search = null, 
+            int? categoryId = null, 
+            decimal? minPrice = null, 
+            decimal? maxPrice = null)
         {
-            var products = await _productRepository.GetAll();
-            var response = products.BuildAdapter()
+            var query = _productRepository.Query();
+            if(search != null)
+            {
+                query = query.Where(p => p.Translations.Any(t => t.Language == lang && t.Name.Contains(search)));
+            }
+            if(categoryId != null)
+            {
+                query = query.Where(p => p.Category.Id == categoryId);
+            }
+            if(minPrice != null)
+            {
+                query = query.Where(p => p.Price >=  minPrice);
+            }
+            if(maxPrice != null)
+            {
+                query = query.Where(p => p.Price <=  maxPrice);
+            }
+            var totalCount = await query.CountAsync();
+
+            query = query.Skip((page - 1) * limit).Take(limit);
+            var list = query.ToList();
+
+            var response = query.BuildAdapter()
                 .AddParameters("lang", lang)
                 .AdaptToType<List<ProductUserResponse>>();
             return response;

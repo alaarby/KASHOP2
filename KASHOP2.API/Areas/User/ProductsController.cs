@@ -19,9 +19,11 @@ namespace KASHOP2.API.Areas.User
             _localizer = localizer;
         }
         [HttpGet]
-        public async Task<IActionResult> Index([FromQuery] string lang = "en")
+        public async Task<IActionResult> Index([FromQuery] string lang = "en", [FromQuery] int page = 1,
+            [FromQuery] int limit = 3, [FromQuery] string? search = null, [FromQuery] int? categoryId = null,
+            [FromQuery] decimal? minPrice = null, [FromQuery] decimal? maxPrice = null)
         {
-            var response = await _productService.GetAllForUser(lang);
+            var response = await _productService.GetAllForUser(lang, page, limit, search, categoryId, minPrice, maxPrice);
 
             return Ok(new { message = _localizer["Success"].Value, response });
         }

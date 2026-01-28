@@ -14,5 +14,6 @@ namespace KASHOP2.DAL.Repository.Interfaces
         Task<Product> AddAsync(Product product);
         Task<Product?> FindByIdAsync(int id);
         Task<bool> DecreaseQuantityAsync(List<(int productId, int quantity)> items);
+        IQueryable<Product> Query();
     }
 }

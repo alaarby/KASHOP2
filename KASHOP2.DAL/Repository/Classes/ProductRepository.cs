@@ -19,6 +19,10 @@ namespace KASHOP2.DAL.Repository.Classes
         {
             _context = context;
         }
+        public IQueryable<Product> Query()
+        {
+            return _context.Products.Include(p => p.Translations).AsQueryable();
+        }
         public async Task<Product> AddAsync(Product product)
         {
             await _context.Products.AddAsync(product);

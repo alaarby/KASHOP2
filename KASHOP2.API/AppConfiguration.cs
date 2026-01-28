@@ -1,4 +1,5 @@
-﻿using KASHOP2.BLL.Services.Classes;
+﻿using KASHOP2.API;
+using KASHOP2.BLL.Services.Classes;
 using KASHOP2.BLL.Services.Interfaces;
 using KASHOP2.DAL.Repository.Classes;
 using KASHOP2.DAL.Repository.Interfaces;
@@ -21,6 +22,7 @@ namespace KASHOP2.BLL
             Services.AddScoped<ICartService, CartService>();
             Services.AddScoped<ICheckoutService, CheckoutService>();
             Services.AddScoped<IOrderRepository, OrderRepository>();
+            Services.AddScoped<IOrderService, OrderService>();
             Services.AddScoped<IOrderItemRepository, OrderItemRepository>();
 
             Services.AddScoped<IFileService, FileService>();
@@ -29,6 +31,9 @@ namespace KASHOP2.BLL
             Services.AddScoped<ISeedData, RoleSeedData>();
             Services.AddScoped<ISeedData, UserSeedData>();
             Services.AddTransient<IEmailSender, EmailSender>();
+
+            Services.AddExceptionHandler<GlobalExceptionHandler>();
+            Services.AddProblemDetails();
         }
     }
 }

@@ -38,6 +38,9 @@ namespace KASHOP2.BLL.MapsterConfig
                 .Where(t => t.Language == MapContext.Current.Parameters["lang"].ToString())
                 .Select(t => t.Description).FirstOrDefault())
                 .Map(dest => dest.MainImage, source => $"");
+
+            TypeAdapterConfig<Order, OrderResponse>.NewConfig()
+                .Map(dest => dest.UserName, source => source.User.UserName);
         }
     }
 }

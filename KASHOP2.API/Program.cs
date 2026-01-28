@@ -1,4 +1,5 @@
 
+using KASHOP2.API.Middleware;
 using KASHOP2.BLL;
 using KASHOP2.BLL.MapsterConfig;
 using KASHOP2.BLL.Services.Classes;
@@ -106,6 +107,10 @@ namespace KASHOP2.API
             {
                 app.MapOpenApi();
             }
+
+            //app.UseMiddleware<GlobalExceptionHandling>();
+            app.UseExceptionHandler();
+            
             app.UseStaticFiles();
             app.UseHttpsRedirection();
             app.UseAuthentication();

@@ -29,6 +29,23 @@ namespace KASHOP2.DAL.Repository.Classes
         {
             return await _context.Orders.FirstOrDefaultAsync(o => o.SessionId == sessionId);    
         }
+
+        public async Task<Order?> GetOrdersByIdAsync(int id)
+        {
+            return await _context.Orders
+                .Include(o => o.User)
+                .Include(o => o.Items)
+                .ThenInclude(i => i.Product)
+                .FirstOrDefaultAsync(o => o.Id == id);
+        }
+
+        public async Task<List<Order>> GetOrdersByStatusAsync(OrderStatusEnum status)
+        {
+            return await _context.Orders.Where(o => o.OrderStatus == status)
+                .Include(o => o.User)
+                .ToListAsync();
+        }
+
         public async Task<Order?> UpdateAsync(Order order)
         {
             _context.Orders.Update(order);
