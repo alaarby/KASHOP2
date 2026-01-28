@@ -39,6 +39,7 @@ namespace KASHOP2.BLL.Services.Classes
             _signInManager = signInManager;
             _tokenService = tokenService;
         }
+
         public async Task<LoginResponse> LoginAsync(LoginRequest request)
         {
             try
