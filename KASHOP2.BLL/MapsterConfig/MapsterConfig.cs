@@ -41,6 +41,9 @@ namespace KASHOP2.BLL.MapsterConfig
 
             TypeAdapterConfig<Order, OrderResponse>.NewConfig()
                 .Map(dest => dest.UserName, source => source.User.UserName);
+
+            TypeAdapterConfig<Review, ReviewResponse>.NewConfig()
+                .Map(dest => dest.UserName, source => source.User.UserName);
         }
     }
 }
